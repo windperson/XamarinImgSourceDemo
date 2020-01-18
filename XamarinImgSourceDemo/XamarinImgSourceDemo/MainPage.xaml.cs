@@ -16,6 +16,28 @@ namespace XamarinImgSourceDemo
         public MainPage()
         {
             InitializeComponent();
+
+            var fontName = "gestures.ttf";
+            switch(Device.RuntimePlatform)
+            {
+                case Device.Android:
+                    fontName = "gestures.ttf#gestures";
+                    break;
+                case Device.iOS:
+                    fontName = "gestures";
+                    break;
+                case Device.UWP:
+                    fontName = "Assets/Fonts/gestures.ttf#gestures";
+                    break;
+            }
+
+            imgDemoIconFont.Source =
+                new FontImageSource
+                {
+                    Glyph = "\uE700",
+                    FontFamily = fontName,
+                    Size = 80
+                };
         }
     }
 }

@@ -4,13 +4,40 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="XamarinImgSourceDemo.MainPage">
+             x:Class="XamarinImgSourceDemo.MainPage"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true" >
 
     <StackLayout>
         <!-- Place new controls here -->
         <Label Text="Welcome to Xamarin.Forms!" 
            HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+           VerticalOptions="Center" />
+        <Label Text="Test gesture glyphs: &#xE700; | &#xE701; | &#xE702; | &#xE703;"
+               FontFamily="{OnPlatform iOS=gestures, Android=gestures.ttf#gestures, UWP=Assets/Fonts/gestures.ttf#gestures}" VerticalOptions="Center" HeightRequest="22"/>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="5">
+            <Image x:Name="imgDemoIconFont" 
+               BackgroundColor="#D1D1D1" VerticalOptions="Center" HorizontalOptions="Center" Aspect="Fill">
+            </Image>
+            <Image BackgroundColor="#D1D1D1" VerticalOptions="Center" HorizontalOptions="Center" Aspect="Fill">
+                <Image.Source>
+                    <FontImageSource Glyph="&#xE701;" 
+                                     FontFamily="{OnPlatform iOS=gestures, Android=gestures.ttf#gestures, UWP=Assets/Fonts/gestures.ttf#gestures}" Size="80"/>
+                </Image.Source>
+            </Image>
+            <Image BackgroundColor="#D1D1D1" VerticalOptions="Center" HorizontalOptions="Center" Aspect="Fill">
+                <Image.Source>
+                    <FontImageSource Glyph="&#xE702;" 
+                                     FontFamily="{OnPlatform iOS=gestures, Android=gestures.ttf#gestures, UWP=Assets/Fonts/gestures.ttf#gestures}" Size="80"/>
+                </Image.Source>
+            </Image>
+            <Image BackgroundColor="#D1D1D1" VerticalOptions="Center" HorizontalOptions="Center" Aspect="Fill">
+                <Image.Source>
+                    <FontImageSource Glyph="&#xE703;" 
+                                     FontFamily="{OnPlatform iOS=gestures, Android=gestures.ttf#gestures, UWP=Assets/Fonts/gestures.ttf#gestures}" Size="80"/>
+                </Image.Source>
+            </Image>
+        </StackLayout>
     </StackLayout>
 
 </ContentPage>
