@@ -132,4 +132,7 @@
       <Name>XamarinImgSourceDemo</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\year2020.gif" />
+  </ItemGroup>
 </Project>
